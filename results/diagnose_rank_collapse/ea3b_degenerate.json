@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "fraction": 0.0,
+      "n_zeroed": 0,
+      "K": 36,
+      "expect_rank": 36,
+      "hard_rank": 36,
+      "eff_rank": 28.71199004809048
+    },
+    {
+      "fraction": 0.25,
+      "n_zeroed": 9,
+      "K": 36,
+      "expect_rank": 27,
+      "hard_rank": 27,
+      "eff_rank": 22.2278820774722
+    },
+    {
+      "fraction": 0.5,
+      "n_zeroed": 18,
+      "K": 36,
+      "expect_rank": 18,
+      "hard_rank": 18,
+      "eff_rank": 15.721884137205366
+    },
+    {
+      "fraction": 0.75,
+      "n_zeroed": 27,
+      "K": 36,
+      "expect_rank": 9,
+      "hard_rank": 9,
+      "eff_rank": 8.640503410554569
+    }
+  ],
+  "tracks_expected": true
+}

@@ -1,0 +1,21 @@
+# Large artifacts (regenerable or externally hosted)
+data/
+data_cache/
+.hf_cache/
+checkpoints/
+*.zip
+
+# Python
+__pycache__/
+*.egg-info/
+.venv/
+
+# Tooling / local
+.env
+.DS_Store
+.claude/
+.omc/
+
+# All latex files and literatures
+paper/
+literature/

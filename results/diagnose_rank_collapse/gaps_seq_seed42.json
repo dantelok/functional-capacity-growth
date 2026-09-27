@@ -1,0 +1,56 @@
+{
+  "config": {
+    "cl_checkpoint": "checkpoints/seq_wikitext-bookcorpus-code_g4_seed42/cl_final.pt",
+    "growth_method": "gate_fp",
+    "gf": 4,
+    "n_probe_batches": 3,
+    "probe": [
+      2,
+      128
+    ],
+    "m_old": 64
+  },
+  "summary": {
+    "grown_gate_eff": {
+      "mean": 28.768021710605794,
+      "std": 0.3492900035051632
+    },
+    "grown_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_gate_eff": {
+      "mean": 31.49203534841334,
+      "std": 0.3126303074638088
+    },
+    "aftercl_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "grown_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_eff": {
+      "mean": 32.00073090479028,
+      "std": 0.14553936562005707
+    },
+    "angle_min": {
+      "mean": 66.95023600260417,
+      "std": 0.29860821340838983
+    },
+    "angle_median": {
+      "mean": 87.10209147135417,
+      "std": 0.08871716945888909
+    },
+    "angle_max": {
+      "mean": 89.93568166097005,
+      "std": 0.061132625425341626
+    }
+  },
+  "K": 36
+}

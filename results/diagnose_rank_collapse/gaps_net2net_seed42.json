@@ -1,0 +1,68 @@
+{
+  "config": {
+    "cl_checkpoint": "checkpoints/exp1_net2net_isolation_seed42_cleanfp/cl_final.pt",
+    "growth_method": "net2net",
+    "gf": 4,
+    "n_probe_batches": 3,
+    "probe": [
+      2,
+      128
+    ],
+    "m_old": 64
+  },
+  "summary": {
+    "grown_gate_eff": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "grown_gate_hard": {
+      "mean": 0,
+      "std": 0.0
+    },
+    "aftercl_gate_eff": {
+      "mean": 33.44384105691099,
+      "std": 0.1545961566808211
+    },
+    "aftercl_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "grown_resid_hard": {
+      "mean": 0,
+      "std": 0.0
+    },
+    "aftercl_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_eff": {
+      "mean": 33.61118239979386,
+      "std": 0.03066407662366392
+    },
+    "angle_min": {
+      "mean": 89.81033325195312,
+      "std": 0.0445954580576634
+    },
+    "angle_median": {
+      "mean": 89.97947947184245,
+      "std": 0.003825005062227355
+    },
+    "angle_max": {
+      "mean": 89.99936421712239,
+      "std": 0.0002892693318035098
+    },
+    "cmp_angle_min": {
+      "mean": null,
+      "std": null
+    },
+    "cmp_angle_median": {
+      "mean": null,
+      "std": null
+    },
+    "cmp_angle_max": {
+      "mean": null,
+      "std": null
+    }
+  },
+  "K": 36
+}

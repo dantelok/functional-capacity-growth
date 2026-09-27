@@ -1,0 +1,68 @@
+{
+  "config": {
+    "cl_checkpoint": "checkpoints/exp1_gate_fp_replay_seed42/cl_final.pt",
+    "growth_method": "gate_fp",
+    "gf": 4,
+    "n_probe_batches": 3,
+    "probe": [
+      2,
+      128
+    ],
+    "m_old": 64
+  },
+  "summary": {
+    "grown_gate_eff": {
+      "mean": 28.68082882621934,
+      "std": 0.33951204694890336
+    },
+    "grown_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_gate_eff": {
+      "mean": 26.61700970845197,
+      "std": 0.25695483408112896
+    },
+    "aftercl_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "grown_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_eff": {
+      "mean": 27.129816489184407,
+      "std": 0.09187362925936558
+    },
+    "angle_min": {
+      "mean": 46.49401092529297,
+      "std": 0.6818823261267998
+    },
+    "angle_median": {
+      "mean": 85.74554951985677,
+      "std": 0.1526447008976855
+    },
+    "angle_max": {
+      "mean": 89.8926010131836,
+      "std": 0.05356099519779737
+    },
+    "cmp_angle_min": {
+      "mean": null,
+      "std": null
+    },
+    "cmp_angle_median": {
+      "mean": null,
+      "std": null
+    },
+    "cmp_angle_max": {
+      "mean": null,
+      "std": null
+    }
+  },
+  "K": 36
+}

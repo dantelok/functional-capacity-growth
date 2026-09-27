@@ -1,0 +1,63 @@
+{
+  "seed": 43,
+  "n_probe_batches": 5,
+  "probe_batch": 2,
+  "probe_seq": 128,
+  "rows": [
+    {
+      "g": 2,
+      "K": 12,
+      "init": "clone",
+      "hard": 12,
+      "eff_mean": 11.362641135667843,
+      "eff_std": 0.10351322439891952,
+      "eff_over_K": 0.9468867613056536
+    },
+    {
+      "g": 2,
+      "K": 12,
+      "init": "random",
+      "hard": 12,
+      "eff_mean": 11.941743109027945,
+      "eff_std": 0.009946224126964737,
+      "eff_over_K": 0.9951452590856621
+    },
+    {
+      "g": 3,
+      "K": 24,
+      "init": "clone",
+      "hard": 24,
+      "eff_mean": 20.339147866324478,
+      "eff_std": 0.24419107470500412,
+      "eff_over_K": 0.8474644944301866
+    },
+    {
+      "g": 3,
+      "K": 24,
+      "init": "random",
+      "hard": 24,
+      "eff_mean": 23.763242779815652,
+      "eff_std": 0.03170279966925831,
+      "eff_over_K": 0.9901351158256522
+    },
+    {
+      "g": 4,
+      "K": 36,
+      "init": "clone",
+      "hard": 36,
+      "eff_mean": 28.733353650664608,
+      "eff_std": 0.3601694311449624,
+      "eff_over_K": 0.7981487125184613
+    },
+    {
+      "g": 4,
+      "K": 36,
+      "init": "random",
+      "hard": 36,
+      "eff_mean": 35.60606506163302,
+      "eff_std": 0.023429248403539393,
+      "eff_over_K": 0.9890573628231394
+    }
+  ],
+  "verdict": "random stays flat -> saturation is a CLONING artifact; scope E8 to cloning"
+}

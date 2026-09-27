@@ -1,0 +1,56 @@
+{
+  "config": {
+    "cl_checkpoint": "checkpoints/exp1_gate_fp_isolation_seed42_cleanfp/cl_final.pt",
+    "growth_method": "gate_fp",
+    "gf": 4,
+    "n_probe_batches": 3,
+    "probe": [
+      2,
+      128
+    ],
+    "m_old": 64
+  },
+  "summary": {
+    "grown_gate_eff": {
+      "mean": 28.73436914142625,
+      "std": 0.37545274445292676
+    },
+    "grown_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_gate_eff": {
+      "mean": 30.94962934661563,
+      "std": 0.3590765162331122
+    },
+    "aftercl_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "grown_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_eff": {
+      "mean": 31.486854374285386,
+      "std": 0.2792889253604196
+    },
+    "angle_min": {
+      "mean": 55.021558125813804,
+      "std": 0.18857212627101774
+    },
+    "angle_median": {
+      "mean": 85.95884958902995,
+      "std": 0.17429243210672027
+    },
+    "angle_max": {
+      "mean": 89.84758758544922,
+      "std": 0.12428287406969227
+    }
+  },
+  "K": 36
+}

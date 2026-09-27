@@ -1,0 +1,295 @@
+{
+  "tag": "after_cl",
+  "d_model": 1024,
+  "n_tokens": 1024,
+  "ranks": [
+    {
+      "layer": 0,
+      "eff_rank": 461.2742054723051,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 1,
+      "eff_rank": 619.6379293726958,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 2,
+      "eff_rank": 612.0321191070109,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 3,
+      "eff_rank": 650.0708122169151,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 4,
+      "eff_rank": 656.5122397967639,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 5,
+      "eff_rank": 669.7491046215941,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 6,
+      "eff_rank": 675.1954811646059,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 7,
+      "eff_rank": 665.2110956410924,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 8,
+      "eff_rank": 674.7519683628351,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 9,
+      "eff_rank": 683.8940063808966,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 10,
+      "eff_rank": 691.6886543564054,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 11,
+      "eff_rank": 691.2165092478638,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 12,
+      "eff_rank": 692.191487065411,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 13,
+      "eff_rank": 692.5741353702439,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 14,
+      "eff_rank": 692.2548619897925,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 15,
+      "eff_rank": 691.5095837313182,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 16,
+      "eff_rank": 690.8958850547837,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 17,
+      "eff_rank": 689.2220301334016,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 18,
+      "eff_rank": 688.0674765361557,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 19,
+      "eff_rank": 688.2610804912554,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 20,
+      "eff_rank": 687.8772070870613,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 21,
+      "eff_rank": 686.4476070863219,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 22,
+      "eff_rank": 685.1183248579227,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 23,
+      "eff_rank": 684.3138337074158,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 24,
+      "eff_rank": 683.0665240708689,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 25,
+      "eff_rank": 681.6381461291503,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 26,
+      "eff_rank": 679.5468648797557,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 27,
+      "eff_rank": 677.0415334143363,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 28,
+      "eff_rank": 675.4196013258496,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 29,
+      "eff_rank": 673.1817433299778,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 30,
+      "eff_rank": 671.5594510158385,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 31,
+      "eff_rank": 670.1302109935743,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 32,
+      "eff_rank": 668.4747895938855,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 33,
+      "eff_rank": 666.1319219517658,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 34,
+      "eff_rank": 662.8101313827785,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 35,
+      "eff_rank": 658.6023473466339,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 36,
+      "eff_rank": 656.4414944374266,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 37,
+      "eff_rank": 654.2855472991545,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 38,
+      "eff_rank": 651.6682280162798,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 39,
+      "eff_rank": 647.9509274847237,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 40,
+      "eff_rank": 645.3060208123252,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 41,
+      "eff_rank": 640.9553299250784,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 42,
+      "eff_rank": 635.7181509572093,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 43,
+      "eff_rank": 630.3412919435474,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 44,
+      "eff_rank": 625.3989575300305,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 45,
+      "eff_rank": 619.0522964441388,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 46,
+      "eff_rank": 611.6502201959776,
+      "n_tokens": 1024,
+      "d_model": 1024
+    },
+    {
+      "layer": 47,
+      "eff_rank": 601.8634624034731,
+      "n_tokens": 1024,
+      "d_model": 1024
+    }
+  ]
+}

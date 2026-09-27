@@ -1,0 +1,68 @@
+{
+  "config": {
+    "cl_checkpoint": "checkpoints/exp1_gate_fp_isolation_seed42_cleanfp/cl_final.pt",
+    "growth_method": "gate_fp",
+    "gf": 4,
+    "n_probe_batches": 3,
+    "probe": [
+      2,
+      128
+    ],
+    "m_old": 64
+  },
+  "summary": {
+    "grown_gate_eff": {
+      "mean": 28.729827848857273,
+      "std": 0.33351666644676264
+    },
+    "grown_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_gate_eff": {
+      "mean": 30.94962934661563,
+      "std": 0.3590765162331122
+    },
+    "aftercl_gate_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "grown_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_hard": {
+      "mean": 36,
+      "std": 0.0
+    },
+    "aftercl_resid_eff": {
+      "mean": 31.486854374285386,
+      "std": 0.2792889253604196
+    },
+    "angle_min": {
+      "mean": 52.69315973917643,
+      "std": 1.10440375066801
+    },
+    "angle_median": {
+      "mean": 86.03781382242839,
+      "std": 0.024407303457298798
+    },
+    "angle_max": {
+      "mean": 89.94623057047527,
+      "std": 0.03963998868049415
+    },
+    "cmp_angle_min": {
+      "mean": 59.15430704752604,
+      "std": 0.6348265421911405
+    },
+    "cmp_angle_median": {
+      "mean": 85.96577707926433,
+      "std": 0.02633752179330549
+    },
+    "cmp_angle_max": {
+      "mean": 89.91895802815755,
+      "std": 0.054173785166587704
+    }
+  },
+  "K": 36
+}
