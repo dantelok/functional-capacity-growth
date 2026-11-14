@@ -1,0 +1,1237 @@
+{
+  "taus": [
+    0.1,
+    0.01,
+    0.001,
+    0.0001,
+    1e-05
+  ],
+  "summary": {
+    "n_measurements": 23,
+    "min_ratio_own": 0.12531767772042995,
+    "min_ratio_jalpha_lower_bound": 0.10547307787645138,
+    "largest_tau_full_rank_own": 0.1,
+    "largest_tau_full_rank_jalpha_guaranteed": 0.1
+  },
+  "measurements": [
+    {
+      "file": "results/diagnose_transversality/results.json",
+      "seq_len": 16,
+      "n_old_samples": 50,
+      "output_dim": 1608224,
+      "K": 36,
+      "sigma_max_resid": 1028.2623291015625,
+      "sigma_min_resid": 147.0887908935547,
+      "ratio_own": 0.14304597837603616,
+      "sigma_max_jalpha_bounds": [
+        1028.2623291015625,
+        1099.4924725551389
+      ],
+      "ratio_jalpha_bounds": [
+        0.13377880664497072,
+        0.14304597837603616
+      ],
+      "smallest_angle_deg": 69.26297760009766,
+      "largest_gap_ratio": 1.402138919027078,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/mgpu_verify3_m256/results.json",
+      "seq_len": 128,
+      "n_old_samples": 256,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2896.802490234375,
+      "sigma_min_resid": 365.9407958984375,
+      "ratio_own": 0.12632576681775426,
+      "sigma_max_jalpha_bounds": [
+        2896.802490234375,
+        3086.038989828193
+      ],
+      "ratio_jalpha_bounds": [
+        0.11857944669675424,
+        0.12632576681775426
+      ],
+      "smallest_angle_deg": 69.83101654052734,
+      "largest_gap_ratio": 1.2780464381409329,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/mgpu_verify_m256/results.json",
+      "seq_len": 128,
+      "n_old_samples": 256,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2896.80029296875,
+      "sigma_min_resid": 365.9389953613281,
+      "ratio_own": 0.12632524107704368,
+      "sigma_max_jalpha_bounds": [
+        2896.80029296875,
+        3086.0366490240085
+      ],
+      "ratio_jalpha_bounds": [
+        0.11857895319456435,
+        0.12632524107704368
+      ],
+      "smallest_angle_deg": 69.83101654052734,
+      "largest_gap_ratio": 1.2780523546388758,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq128_m1024/results.json",
+      "seq_len": 128,
+      "n_old_samples": 1024,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2788.47705078125,
+      "sigma_min_resid": 360.9200439453125,
+      "ratio_own": 0.1294326750310508,
+      "sigma_max_jalpha_bounds": [
+        2788.47705078125,
+        3245.374935040451
+      ],
+      "ratio_jalpha_bounds": [
+        0.11121058465339195,
+        0.1294326750310508
+      ],
+      "smallest_angle_deg": 59.228633880615234,
+      "largest_gap_ratio": 1.2845016592989476,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq128_m512/results.json",
+      "seq_len": 128,
+      "n_old_samples": 512,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2858.3369140625,
+      "sigma_min_resid": 364.19525146484375,
+      "ratio_own": 0.12741508870877644,
+      "sigma_max_jalpha_bounds": [
+        2858.3369140625,
+        3158.7279062101074
+      ],
+      "ratio_jalpha_bounds": [
+        0.11529807640247529,
+        0.12741508870877644
+      ],
+      "smallest_angle_deg": 64.80998992919922,
+      "largest_gap_ratio": 1.2793372599421151,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq32_m1024/results.json",
+      "seq_len": 32,
+      "n_old_samples": 1024,
+      "output_dim": 3216448,
+      "K": 36,
+      "sigma_max_resid": 1305.1163330078125,
+      "sigma_min_resid": 187.4794921875,
+      "ratio_own": 0.14364964060746127,
+      "sigma_max_jalpha_bounds": [
+        1305.1163330078125,
+        1679.15213472729
+      ],
+      "ratio_jalpha_bounds": [
+        0.11165128418691402,
+        0.14364964060746127
+      ],
+      "smallest_angle_deg": 51.009220123291016,
+      "largest_gap_ratio": 1.3609448223264609,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq32_m128/results.json",
+      "seq_len": 32,
+      "n_old_samples": 128,
+      "output_dim": 3216448,
+      "K": 36,
+      "sigma_max_resid": 1449.6033935546875,
+      "sigma_min_resid": 193.7721405029297,
+      "ratio_own": 0.1336725213009923,
+      "sigma_max_jalpha_bounds": [
+        1449.6033935546875,
+        1569.6935151975467
+      ],
+      "ratio_jalpha_bounds": [
+        0.12344584380763232,
+        0.1336725213009923
+      ],
+      "smallest_angle_deg": 67.44242858886719,
+      "largest_gap_ratio": 1.331848556825294,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq32_m256/results.json",
+      "seq_len": 32,
+      "n_old_samples": 256,
+      "output_dim": 3216448,
+      "K": 36,
+      "sigma_max_resid": 1414.3013916015625,
+      "sigma_min_resid": 192.59918212890625,
+      "ratio_own": 0.136179730340791,
+      "sigma_max_jalpha_bounds": [
+        1414.3013916015625,
+        1601.4606947713105
+      ],
+      "ratio_jalpha_bounds": [
+        0.12026469507352444,
+        0.136179730340791
+      ],
+      "smallest_angle_deg": 62.02252960205078,
+      "largest_gap_ratio": 1.3427800780753305,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq32_m512/results.json",
+      "seq_len": 32,
+      "n_old_samples": 512,
+      "output_dim": 3216448,
+      "K": 36,
+      "sigma_max_resid": 1371.8446044921875,
+      "sigma_min_resid": 190.75241088867188,
+      "ratio_own": 0.1390481183248027,
+      "sigma_max_jalpha_bounds": [
+        1371.8446044921875,
+        1647.765979833458
+      ],
+      "ratio_jalpha_bounds": [
+        0.11576426095892056,
+        0.1390481183248027
+      ],
+      "smallest_angle_deg": 56.36139678955078,
+      "largest_gap_ratio": 1.3511606770228848,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq32_m64/results.json",
+      "seq_len": 32,
+      "n_old_samples": 64,
+      "output_dim": 3216448,
+      "K": 36,
+      "sigma_max_resid": 1468.2728271484375,
+      "sigma_min_resid": 194.26248168945312,
+      "ratio_own": 0.13230680163626962,
+      "sigma_max_jalpha_bounds": [
+        1468.2728271484375,
+        1546.1638672765605
+      ],
+      "ratio_jalpha_bounds": [
+        0.12564158676895637,
+        0.13230680163626962
+      ],
+      "smallest_angle_deg": 71.736083984375,
+      "largest_gap_ratio": 1.3296798283362399,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq64_m1024/results.json",
+      "seq_len": 64,
+      "n_old_samples": 1024,
+      "output_dim": 6432896,
+      "K": 36,
+      "sigma_max_resid": 1945.96044921875,
+      "sigma_min_resid": 264.211669921875,
+      "ratio_own": 0.1357744295512012,
+      "sigma_max_jalpha_bounds": [
+        1945.96044921875,
+        2325.075631834832
+      ],
+      "ratio_jalpha_bounds": [
+        0.11363573137333709,
+        0.1357744295512012
+      ],
+      "smallest_angle_deg": 56.818912506103516,
+      "largest_gap_ratio": 1.3533002497842401,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq64_m128/results.json",
+      "seq_len": 64,
+      "n_old_samples": 128,
+      "output_dim": 6432896,
+      "K": 36,
+      "sigma_max_resid": 2096.2646484375,
+      "sigma_min_resid": 270.9906005859375,
+      "ratio_own": 0.1292730861954509,
+      "sigma_max_jalpha_bounds": [
+        2096.2646484375,
+        2191.602021260276
+      ],
+      "ratio_jalpha_bounds": [
+        0.12364954857547764,
+        0.1292730861954509
+      ],
+      "smallest_angle_deg": 73.0380630493164,
+      "largest_gap_ratio": 1.348017097732077,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq64_m256/results.json",
+      "seq_len": 64,
+      "n_old_samples": 256,
+      "output_dim": 6432896,
+      "K": 36,
+      "sigma_max_resid": 2066.39794921875,
+      "sigma_min_resid": 269.6595153808594,
+      "ratio_own": 0.13049737853389298,
+      "sigma_max_jalpha_bounds": [
+        2066.39794921875,
+        2232.9314322792115
+      ],
+      "ratio_jalpha_bounds": [
+        0.12076479890186814,
+        0.13049737853389298
+      ],
+      "smallest_angle_deg": 67.73167419433594,
+      "largest_gap_ratio": 1.3472289825586274,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq64_m512/results.json",
+      "seq_len": 64,
+      "n_old_samples": 512,
+      "output_dim": 6432896,
+      "K": 36,
+      "sigma_max_resid": 2019.3272705078125,
+      "sigma_min_resid": 267.5292053222656,
+      "ratio_own": 0.13248432249171202,
+      "sigma_max_jalpha_bounds": [
+        2019.3272705078125,
+        2271.73795991657
+      ],
+      "ratio_jalpha_bounds": [
+        0.11776411278177994,
+        0.13248432249171202
+      ],
+      "smallest_angle_deg": 62.73421096801758,
+      "largest_gap_ratio": 1.3480367715157524,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_grid/seq64_m64/results.json",
+      "seq_len": 64,
+      "n_old_samples": 64,
+      "output_dim": 6432896,
+      "K": 36,
+      "sigma_max_resid": 2119.412109375,
+      "sigma_min_resid": 271.61688232421875,
+      "ratio_own": 0.1281567096473355,
+      "sigma_max_jalpha_bounds": [
+        2119.412109375,
+        2170.509574822879
+      ],
+      "ratio_jalpha_bounds": [
+        0.12513968400548686,
+        0.1281567096473355
+      ],
+      "smallest_angle_deg": 77.54303741455078,
+      "largest_gap_ratio": 1.348978307942306,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq128_m128/results.json",
+      "seq_len": 128,
+      "n_old_samples": 128,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2919.587890625,
+      "sigma_min_resid": 367.0235290527344,
+      "ratio_own": 0.12571073137797031,
+      "sigma_max_jalpha_bounds": [
+        2919.587890625,
+        3025.152620485773
+      ],
+      "ratio_jalpha_bounds": [
+        0.12132397108407658,
+        0.12571073137797031
+      ],
+      "smallest_angle_deg": 74.81920623779297,
+      "largest_gap_ratio": 1.2766140046496228,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq128_m256/results.json",
+      "seq_len": 128,
+      "n_old_samples": 256,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2896.797607421875,
+      "sigma_min_resid": 365.9409484863281,
+      "ratio_own": 0.12632603242585955,
+      "sigma_max_jalpha_bounds": [
+        2896.797607421875,
+        3086.0330333400943
+      ],
+      "ratio_jalpha_bounds": [
+        0.11857972501683194,
+        0.12632603242585955
+      ],
+      "smallest_angle_deg": 69.8310546875,
+      "largest_gap_ratio": 1.2780368517722023,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq128_m64/results.json",
+      "seq_len": 128,
+      "n_old_samples": 64,
+      "output_dim": 12865792,
+      "K": 36,
+      "sigma_max_resid": 2934.292724609375,
+      "sigma_min_resid": 367.71875,
+      "ratio_own": 0.12531767772042995,
+      "sigma_max_jalpha_bounds": [
+        2934.292724609375,
+        2982.979858722722
+      ],
+      "ratio_jalpha_bounds": [
+        0.12327228724817907,
+        0.12531767772042995
+      ],
+      "smallest_angle_deg": 79.63397979736328,
+      "largest_gap_ratio": 1.2751394949868782,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq16_m1024/results.json",
+      "seq_len": 16,
+      "n_old_samples": 1024,
+      "output_dim": 1608224,
+      "K": 36,
+      "sigma_max_resid": 889.9649047851562,
+      "sigma_min_resid": 138.99986267089844,
+      "ratio_own": 0.1561857798251651,
+      "sigma_max_jalpha_bounds": [
+        889.9649047851562,
+        1317.8705454459148
+      ],
+      "ratio_jalpha_bounds": [
+        0.10547307787645138,
+        0.1561857798251651
+      ],
+      "smallest_angle_deg": 42.47785949707031,
+      "largest_gap_ratio": 1.435695805028564,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq16_m128/results.json",
+      "seq_len": 16,
+      "n_old_samples": 128,
+      "output_dim": 1608224,
+      "K": 36,
+      "sigma_max_resid": 1005.4288330078125,
+      "sigma_min_resid": 145.54281616210938,
+      "ratio_own": 0.1447569548276307,
+      "sigma_max_jalpha_bounds": [
+        1005.4288330078125,
+        1195.779381091418
+      ],
+      "ratio_jalpha_bounds": [
+        0.12171376966649884,
+        0.1447569548276307
+      ],
+      "smallest_angle_deg": 57.22624588012695,
+      "largest_gap_ratio": 1.393150137687046,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq16_m256/results.json",
+      "seq_len": 16,
+      "n_old_samples": 256,
+      "output_dim": 1608224,
+      "K": 36,
+      "sigma_max_resid": 977.7933349609375,
+      "sigma_min_resid": 144.03756713867188,
+      "ratio_own": 0.14730880441563465,
+      "sigma_max_jalpha_bounds": [
+        977.7933349609375,
+        1235.3682421802366
+      ],
+      "ratio_jalpha_bounds": [
+        0.11659484372406038,
+        0.14730880441563465
+      ],
+      "smallest_angle_deg": 52.325862884521484,
+      "largest_gap_ratio": 1.4068160102697493,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq16_m512/results.json",
+      "seq_len": 16,
+      "n_old_samples": 512,
+      "output_dim": 1608224,
+      "K": 36,
+      "sigma_max_resid": 938.5438842773438,
+      "sigma_min_resid": 141.89540100097656,
+      "ratio_own": 0.1511867514966896,
+      "sigma_max_jalpha_bounds": [
+        938.5438842773438,
+        1277.922803877923
+      ],
+      "ratio_jalpha_bounds": [
+        0.11103597225934746,
+        0.1511867514966896
+      ],
+      "smallest_angle_deg": 47.259010314941406,
+      "largest_gap_ratio": 1.4223376332073965,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    },
+    {
+      "file": "results/transversality_sweep/seq16_m64/results.json",
+      "seq_len": 16,
+      "n_old_samples": 64,
+      "output_dim": 1608224,
+      "K": 36,
+      "sigma_max_resid": 1020.4532470703125,
+      "sigma_min_resid": 146.41004943847656,
+      "ratio_own": 0.143475509396256,
+      "sigma_max_jalpha_bounds": [
+        1020.4532470703125,
+        1134.2854593383383
+      ],
+      "ratio_jalpha_bounds": [
+        0.12907689879396125,
+        0.143475509396256
+      ],
+      "smallest_angle_deg": 64.111328125,
+      "largest_gap_ratio": 1.392826867621163,
+      "largest_gap_after_index": 12,
+      "tau_sweep": [
+        {
+          "tau": 0.1,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.01,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 0.0001,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        },
+        {
+          "tau": 1e-05,
+          "hard_rank_own": 36,
+          "hard_rank_jalpha_lower": 36,
+          "hard_rank_jalpha_upper": 36
+        }
+      ]
+    }
+  ]
+}

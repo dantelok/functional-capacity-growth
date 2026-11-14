@@ -126,8 +126,8 @@ number in the paper.
 # Train the shared base checkpoint (everything else reuses this)
 python3 experiments/_shared/run_exp1_cl_matrix.py --base-only
 
-# One 2-domain continual-learning run (gate-zero, isolation, clean-FP)
-python3 experiments/_shared/run_exp1_cl_matrix.py --run-index 2 --clean-fp \
+# One 2-domain continual-learning run (gate-zero, isolation; clean FP is the default)
+python3 experiments/_shared/run_exp1_cl_matrix.py --run-index 2 \
     --base-checkpoint checkpoints/exp1_shared_base/base_final.pt
 
 # Estimator self-test (no checkpoints needed)

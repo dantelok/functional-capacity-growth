@@ -184,15 +184,23 @@ class Isolation(CLMethodBase):
         self.lam = config.distill_lambda
         self.replay_buffer = None
 
+    @property
+    def uses_preservation(self) -> bool:
+        """Old-data replay + teacher KL only exist when distill_lambda > 0.
+        At the clean-FP default (0.0) isolation trains on new data alone."""
+        return self.lam > 0.0
+
     def setup(self):
         cfg = self.config
 
-        if self.teacher is None:
-            raise ValueError("Isolation requires a teacher model for old-task preservation")
-        self.teacher = self.teacher.to(self.device)
-        self.teacher.eval()
-        for p in self.teacher.parameters():
-            p.requires_grad = False
+        if self.uses_preservation:
+            if self.teacher is None:
+                raise ValueError("Isolation with distill_lambda > 0 requires a "
+                                 "teacher model for old-task preservation")
+            self.teacher = self.teacher.to(self.device)
+            self.teacher.eval()
+            for p in self.teacher.parameters():
+                p.requires_grad = False
 
         # Use original_block_indices set by growth (interleaved insertion scatters
         # originals at positions 0, g, 2g, ... not 0..n_orig-1). Fall back to
@@ -269,43 +277,17 @@ class Isolation(CLMethodBase):
         else:
             print("Isolation: no parameters (degenerate setup)")
 
-        # Exact-FP depth growth starts new blocks at block_gate=0. In isolation,
-        # that means only the scalar block_gate has a first-step gradient; the
-        # cloned weights behind it are trainable but gradient-blocked until the
-        # gate opens. This can make CL appear completely flat.
-        zero_gated_new_blocks = []
-        for i in range(len(self.model.blocks)):
-            if i in orig_indices:
-                continue
-            if hasattr(self.model.blocks[i], "block_gate"):
-                if float(self.model.blocks[i].block_gate.detach().item()) == 0.0:
-                    zero_gated_new_blocks.append(i)
-
-        gate_warmup_eps = getattr(cfg, 'gate_warmup_eps', 1e-3)
-        if zero_gated_new_blocks and gate_warmup_eps > 0.0:
-            # FIX: With block_gate=0, internal weights get zero gradient:
-            #   dL/dW = dL/dx * block_gate * dBlock/dW = 0 * (...) = 0
-            # Only the scalar gate itself gets gradient. We fix this by
-            # initializing gates to a small epsilon that:
-            #   - Is small enough to cause negligible function change
-            #   - Is large enough to let gradients flow to internal weights
-            # This is NOT the same as gate_init != 0 from the CLI: that changes
-            # the growth operator. This is a post-growth, pre-CL adjustment
-            # applied ONLY in isolation mode to enable learning.
-            # Set gate_warmup_eps=0.0 to disable (e.g. the gate_init=0 case).
-            for i in zero_gated_new_blocks:
-                self.model.blocks[i].block_gate.data.fill_(gate_warmup_eps)
-            print(f"  Applied gate warmup: set {len(zero_gated_new_blocks)} "
-                  f"new block gates from 0.0 -> {gate_warmup_eps:.1e} "
-                  f"(enables gradient flow to internal weights)")
-        elif zero_gated_new_blocks:
-            print(f"  Gate warmup disabled (eps=0): "
-                  f"{len(zero_gated_new_blocks)} new blocks stay at block_gate=0; "
-                  f"only the scalar gate receives first-step gradient.")
+        # Clean FP: new gate-zero blocks start at block_gate=0, so only the
+        # scalar gate gets a first-step gradient; block weights start learning
+        # once their gate opens. No warm-up nudge is applied.
 
         print(f"  preserve_lambda={self.lam}, preserve_temperature={self.temperature}")
 
     def build_dataloader(self, new_dataset, old_dataset, batch_size, num_workers):
+        if not self.uses_preservation:
+            # No preservation term: no replay buffer, new-domain data only.
+            return super().build_dataloader(new_dataset, old_dataset,
+                                            batch_size, num_workers)
         self.replay_buffer = ReplayBuffer(
             old_dataset, self.config.replay_buffer_fraction
         )
@@ -332,7 +314,7 @@ class Isolation(CLMethodBase):
         )
 
     def has_old_forward_loss(self) -> bool:
-        return True
+        return self.uses_preservation
 
     def compute_old_forward_loss(self, old_logits, batch):
         # Preserve the old function on Dataset A replay samples.

@@ -150,7 +150,7 @@ def self_test():
     (b) report rank<<K when the new blocks are made near-identical (collapsed)."""
     import torch.nn as nn
     from gatezero.config import ModelConfig, GrowthConfig, GrowthMethod
-    from gatezero.models.transformer import GrowableTransformer
+    from gatezero.models.transformer import GrowableTransformer, GatedTransformerBlock
     from gatezero.growth import grow_transformer
 
     torch.manual_seed(0)
@@ -158,12 +158,16 @@ def self_test():
                       max_seq_len=64, vocab_size=100)
     x = torch.randint(0, 100, (2, 32))
 
-    # independent case: fresh gate-zero growth, gates opened to distinct values
+    # independent case: gate-zero growth, then replace the new blocks with fresh
+    # random blocks (exact clones are degenerate by design) and open the gates to
+    # small DISTINCT values so the columns are non-degenerate
     m = GrowableTransformer(copy.deepcopy(cfg)).eval()
-    gc = GrowthConfig(method=GrowthMethod.GATE_ZERO, growth_factor=4, clone_noise_std=0.05)
+    gc = GrowthConfig(method=GrowthMethod.GATE_ZERO, growth_factor=4)
     m = grow_transformer(m, gc, gate_init_value=0.0)
-    # open gates to small DISTINCT values so columns are non-degenerate
     new_idx = list(range(m.n_original_blocks, len(m.blocks)))
+    for i in new_idx:
+        m.blocks[i] = GatedTransformerBlock(cfg.d_model, cfg.n_heads, cfg.d_ffn,
+                                            cfg.max_seq_len).eval()
     with torch.no_grad():
         for j, i in enumerate(new_idx):
             m.blocks[i].block_gate.data.fill_(0.02 + 0.001 * j)
@@ -172,12 +176,13 @@ def self_test():
     print(f"\n[self-test] INDEPENDENT: K={K}, eff-rank={indep['effective_rank']:.2f}, "
           f"thr-rank={indep['threshold_rank_1e-3']}")
 
-    # collapsed case: force every new block to be an identical clone of block 0
-    # -> their gate-Jacobian columns become (near-)parallel -> rank << K
+    # collapsed case: every new block an identical copy of block 0, all gates at
+    # 0 (the growth point) -> identical inputs, identical columns -> rank 1
     src = copy.deepcopy(m.blocks[new_idx[0]])
     with torch.no_grad():
         for i in new_idx:
             m.blocks[i].load_state_dict(src.state_dict())
+            m.blocks[i].block_gate.data.zero_()
     Jc, _ = gate_jacobian_columns(m, x)
     coll = spectrum_stats(Jc)
     print(f"[self-test] COLLAPSED:   K={K}, eff-rank={coll['effective_rank']:.2f}, "

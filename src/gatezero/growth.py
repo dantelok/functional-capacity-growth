@@ -11,7 +11,7 @@ import torch
 import torch.nn as nn
 
 from .config import GrowthConfig, GrowthMethod
-from .models.transformer import GrowableTransformer, GatedTransformerBlock
+from .models.transformer import GrowableTransformer
 from .nonfp_growth import gstack_growth
 
 
@@ -94,8 +94,8 @@ def _gate_depth_growth(model: GrowableTransformer, config: GrowthConfig,
     For growth_factor=4 with 12 original layers:
       - Target: 48 layers
       - Insert 36 new blocks
-      - Each new block cloned from an existing block + small noise
-      - block_gate = 0.0 (or gate_init_value) for exact/near-exact FP
+      - Each new block is an exact copy of an existing block (round-robin)
+      - block_gate = 0.0 (or gate_init_value) for exact FP
 
     Two insertion patterns (controlled by config.growth_pattern):
 
@@ -131,7 +131,7 @@ def _gate_depth_growth(model: GrowableTransformer, config: GrowthConfig,
         # Append new blocks at the end (clone from originals, round-robin)
         for j in range(n_new):
             src_idx = j % n_orig
-            new_block = _clone_block(model.blocks[src_idx], config.clone_noise_std)
+            new_block = copy.deepcopy(model.blocks[src_idx])
             new_block.block_gate = nn.Parameter(
                 torch.tensor(gate_init_value)
             )
@@ -145,7 +145,7 @@ def _gate_depth_growth(model: GrowableTransformer, config: GrowthConfig,
 
             # Insert (g-1) new blocks after each original
             for j in range(g - 1):
-                new_block = _clone_block(model.blocks[i], config.clone_noise_std)
+                new_block = copy.deepcopy(model.blocks[i])
                 # ONLY block_gate=0 for FP. Internal gates keep cloned values.
                 # block_gate=0 makes the entire block identity via residual:
                 #   x + 0 * Block(x) = x
@@ -173,23 +173,6 @@ def _gate_depth_growth(model: GrowableTransformer, config: GrowthConfig,
 
     print(f"  Total params after growth: {model.count_params():,}")
     return model
-
-
-def _clone_block(block: GatedTransformerBlock,
-                 noise_std: float = 0.01) -> GatedTransformerBlock:
-    """Deep copy a block and add small noise to weights."""
-    new_block = copy.deepcopy(block)
-
-    # Add noise to all weight parameters (not gates)
-    with torch.no_grad():
-        for name, param in new_block.named_parameters():
-            if "gate" not in name and "norm" not in name:
-                noise = torch.randn_like(param) * noise_std
-                param.add_(noise)
-
-    return new_block
-
-
 
 
 def _verify_new_blocks_identity(model, n_orig, g):

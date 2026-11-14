@@ -16,7 +16,7 @@ x = torch.randint(0, 100, (2, 16))
 for method in [GrowthMethod.GATE_ZERO, GrowthMethod.NET2NET, GrowthMethod.GSTACK]:
     m = GrowableTransformer(copy.deepcopy(cfg)).eval()
     before = copy.deepcopy(m).eval()
-    gc = GrowthConfig(method=method, growth_factor=4, clone_noise_std=0.0)
+    gc = GrowthConfig(method=method, growth_factor=4)
     gi = 0.0 if method == GrowthMethod.GATE_ZERO else 1.0
     try:
         grown = grow_transformer(m, gc, gate_init_value=gi).eval()

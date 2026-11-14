@@ -68,17 +68,12 @@ def main():
     parser.add_argument("--growth-method", type=str, default=None,
                         choices=["gate_fp", "net2net", "gstack"],
                         help="Override the selected config's growth operator (E7). "
-                             "e.g. --run-index 2 --clean-fp --growth-method net2net "
-                             "matches exp1_gate_fp_isolation_seed42_cleanfp but with Net2Net.")
+                             "e.g. --run-index 2 --growth-method net2net "
+                             "matches exp1_gate_fp_isolation_seed42 but with Net2Net.")
     parser.add_argument("--growth-factor", type=int, default=4,
                         help="Growth factor g (12 -> 12*g layers, K = 12*(g-1) new "
                              "blocks). Default 4 (K=36). The scale check uses g=2 "
                              "(K=12) and g=3 (K=24); non-default g adds a _g{N} tag.")
-    parser.add_argument("--clean-fp", action="store_true",
-                        help="Fully clean function preservation: distill_lambda=0,"
-                             "gate_warmup_eps=0, clone_noise_std=0 (no preservation "
-                             "tricks at all). New-block weights get no gradient until "
-                             "the scalar gate opens — the honest clean dynamics.")
     parser.add_argument("--device", type=str, default="cuda")
     parser.add_argument("--seed", type=int, default=42,
                         help="TrainingConfig.seed; appended as _seed{N} to the run "
@@ -152,15 +147,6 @@ def main():
             cfg.name = f"{cfg.name}_lam{args.distill_lambda:g}"
         print(f"  Override: distill_lambda={args.distill_lambda:g} "
               f"(pure isolation if 0); output renamed with _lam suffix")
-
-    if args.clean_fp:
-        for cfg in configs:
-            cfg.cl.distill_lambda = 0.0
-            cfg.cl.gate_warmup_eps = 0.0
-            cfg.growth.clone_noise_std = 0.0
-            cfg.name = f"{cfg.name}_cleanfp"
-        print("  CLEAN-FP: distill_lambda=0, gate_warmup_eps=0, clone_noise_std=0 "
-              "-> output renamed with _cleanfp suffix")
 
     all_results = []
     for i, cfg in enumerate(configs):

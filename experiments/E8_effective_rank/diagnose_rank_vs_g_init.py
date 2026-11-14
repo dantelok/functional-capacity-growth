@@ -41,7 +41,7 @@ def main():
     ap.add_argument("--probe-batch", type=int, default=2)
     ap.add_argument("--probe-seq", type=int, default=128)
     ap.add_argument("--seed", type=int, default=42,
-                    help="Seeds the clone noise and the random init of the new blocks "
+                    help="Seeds the random init of the new blocks (clones are exact copies) "
                          "(reset before each model is grown). Probes stay fixed.")
     ap.add_argument("--out", required=True)
     a = ap.parse_args(); dev = a.device

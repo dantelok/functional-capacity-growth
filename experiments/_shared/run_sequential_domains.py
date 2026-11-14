@@ -75,11 +75,6 @@ def main():
     parser.add_argument("--fast", action="store_true",
                         help="Disable full determinism (recover cuDNN autotuning "
                              "speed on large runs).")
-    parser.add_argument("--clean-fp", action="store_true",
-                        help="Fully clean function preservation: distill_lambda=0, "
-                             "gate_warmup_eps=0, clone_noise_std=0 (no preservation "
-                             "tricks). New-block weights get no gradient until the "
-                             "scalar gate opens — the honest clean dynamics.")
     args = parser.parse_args()
 
     # Seed every RNG surface FIRST, before any dataset/model construction.
@@ -92,7 +87,7 @@ def main():
     name = f"seq_{'-'.join(order_names)}_g{gf}_seed{args.seed}"
     # Encode method only for non-default operators, so existing gate_fp result
     # paths are unchanged and net2net/gstack land in their own dirs.
-    if growth_method != GrowthMethod.GATE_FP:
+    if growth_method != GrowthMethod.GATE_ZERO:
         name = f"{name}_{args.growth_method}"
 
     cfg = ExperimentConfig(
@@ -106,13 +101,6 @@ def main():
         cl=CLConfig(method=CLMethod.ISOLATION, cl_epochs=args.cl_epochs),
         resume_base_checkpoint=args.base_checkpoint,
     )
-
-    if args.clean_fp:
-        cfg.cl.distill_lambda = 0.0
-        cfg.cl.gate_warmup_eps = 0.0
-        cfg.growth.clone_noise_std = 0.0
-        cfg.name = f"{cfg.name}_cleanfp"
-        print("  CLEAN-FP: distill_lambda=0, gate_warmup_eps=0, clone_noise_std=0")
 
     tokenizer = get_tokenizer()
     seq_len = cfg.model.max_seq_len

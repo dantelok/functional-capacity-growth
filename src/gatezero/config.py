@@ -67,7 +67,7 @@ class GrowthConfig:
     method: GrowthMethod = GrowthMethod.GATE_ZERO
     growth_factor: int = 4       # n_layers: 12 -> 48
     gate_init_value: float = 0.0  # block_gate init for newly inserted blocks
-    clone_noise_std: float = 0.01  # noise added to cloned blocks
+    # New blocks are exact round-robin copies of the originals (no clone noise).
     # Growth pattern:
     # - "interleaved": insert new blocks between old blocks (can pollute
     #   the residual stream, causing PPL_A drift in CL)
@@ -91,8 +91,10 @@ class CLConfig:
     # Replay params
     replay_alpha: float = 0.1           # fraction of old data per batch
     replay_buffer_fraction: float = 0.1  # fraction of Dataset A to store
-    # Distillation params
-    distill_lambda: float = 0.5
+    # Distillation-toward-teacher weight. Default 0.0 = clean function
+    # preservation: Isolation adds no preservation KL. The Distillation (LwF)
+    # baseline sets its own nonzero lambda in exp1_configs().
+    distill_lambda: float = 0.0
     distill_temperature: float = 2.0
     # EWC params. lambda is Fisher-scale-dependent — SWEEP it for a fair baseline
     # (same lesson as replay_alpha): an under-tuned lambda makes EWC look bad.
@@ -102,10 +104,6 @@ class CLConfig:
     freeze_old_weights: bool = True
     freeze_old_gates: bool = True
     freeze_old_block_gates: bool = True
-    # Gate warmup: when gate_init=0 and isolation is used, new block gates are
-    # nudged from 0 -> eps so internal weights get non-zero gradients.
-    # Without this, dL/dW = block_gate * (...) = 0 and nothing learns.
-    gate_warmup_eps: float = 1e-3
 
 
 @dataclass
@@ -158,6 +156,8 @@ def exp1_configs():
         for method in methods:
             training = TrainingConfig()
             cl = CLConfig(method=method)
+            if method == CLMethod.DISTILLATION:
+                cl.distill_lambda = 0.5   # LwF baseline: distillation is the method
             if method == CLMethod.REPLAY:
                 training = _replay_training_config()
                 cl = _replay_cl_config(method)

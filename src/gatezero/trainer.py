@@ -43,21 +43,19 @@ class Trainer:
     def __init__(self, config: ExperimentConfig, device: str = "cuda"):
         self.config = config
         self.device = device
-        # Record the ACTUAL knobs used, so results never imply clean function
-        # preservation without disclosing the values behind them. distill_lambda,
-        # gate_warmup_eps and clone_noise_std are the three non-clean-FP knobs;
-        # clean runs set all three to 0.0.
+        # Record the ACTUAL knobs used. Growth is clean-FP by construction
+        # (exact clones, no gate warm-up); distill_lambda is the only remaining
+        # preservation knob and is 0.0 except for the Distillation baseline.
         self.results = {
             "config": config.name,
             "config_params": {
                 "cl_method": config.cl.method.value,
                 "growth_method": config.growth.method.value,
                 "growth_factor": config.growth.growth_factor,
+                "growth_pattern": config.growth.growth_pattern,
                 "gate_init_value": config.growth.gate_init_value,
-                "clone_noise_std": config.growth.clone_noise_std,
                 "distill_lambda": config.cl.distill_lambda,
                 "distill_temperature": config.cl.distill_temperature,
-                "gate_warmup_eps": config.cl.gate_warmup_eps,
                 "replay_alpha": config.cl.replay_alpha,
                 "replay_buffer_fraction": config.cl.replay_buffer_fraction,
                 "freeze_old_weights": config.cl.freeze_old_weights,

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Integration check: Net2Net survives the REAL trainer CL path (isolation +
-clean-fp) with its mechanism intact. This is what the standalone FP test cannot
+"""Integration check: Net2Net survives the REAL trainer CL path (isolation,
+clean FP by default) with its mechanism intact. This is what the standalone FP test cannot
 catch — the trainer's per-step gate clamp (_sanitize_gate_params) and the
-isolation gate-warmup are gate-zero-specific and previously would have throttled
+former isolation gate-warmup were gate-zero-specific and previously would have throttled
 Net2Net's block_gate from 1.0 to ~1/n_new, silently converting it to a hybrid.
 
-Asserts, on a tiny CPU model, for the clean-fp isolation recipe the L40 run uses:
+Asserts, on a tiny CPU model, for the default (clean-FP) isolation recipe the L40 run uses:
   (1) Net2Net new-block block_gate is frozen at 1.0 (requires_grad=False).
-  (2) Isolation.setup() does NOT warm up / disturb the gate (clean-fp, gate=1).
+  (2) Isolation.setup() does NOT warm up / disturb the gate (gate=1).
   (3) _sanitize_gate_params leaves Net2Net gate at 1.0 (the clamp is skipped)...
   (4) ...while it DOES clamp gate-zero (guard is targeted, not blanket).
   (5) Over several optimizer steps WITH _sanitize_gate_params called each step
@@ -29,14 +29,13 @@ mcfg = ModelConfig(d_model=32, n_heads=4, d_ffn=64, n_layers=2,
 
 
 def build_grown(method):
-    """Grow a tiny model exactly as the run script would (g=2, clean-fp)."""
+    """Grow a tiny model exactly as the run script would (g=2, default clean FP)."""
     cfg = ExperimentConfig(
         name=f"itest_{method.value}",
         model=copy.deepcopy(mcfg),
         training=TrainingConfig(seed=0, deterministic=False),
-        growth=GrowthConfig(method=method, growth_factor=2, clone_noise_std=0.0),
-        cl=CLConfig(method=CLMethod.ISOLATION, cl_epochs=1,
-                    distill_lambda=0.0, gate_warmup_eps=0.0),  # clean-fp
+        growth=GrowthConfig(method=method, growth_factor=2),
+        cl=CLConfig(method=CLMethod.ISOLATION, cl_epochs=1),
     )
     trainer = Trainer(cfg, "cpu")
     model = trainer.build_model()
@@ -114,4 +113,4 @@ assert all(abs(g) <= mg2 + 1e-6 for g in g2), f"gate_fp clamp failed: {g2}"
 print(f"(4) gate_fp clamp still active: 0.9 -> <= {mg2:.3f}  ✓")
 
 print("\nAll integration checks passed: Net2Net keeps gate=1.0 through the real "
-      "clean-fp isolation CL path; gate-zero clamp untouched. Safe for L40.")
+      "default isolation CL path; gate-zero clamp untouched. Safe for L40.")
